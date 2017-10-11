@@ -1,32 +1,32 @@
 package jiuzhang.java.elementary;
-
+//Remove Nth Node From End of List
 public class RemoveNthNodeFromListEnd {
-    
     public ListNode removeNthFromEnd(ListNode head, int n) {
+        
         if (n <= 0) {
-            return null;
+            return null;  //Note: 从参数入手判断corner case
         }
         
-        ListNode oldHead = new ListNode(0);//can be any value
-        oldHead.next = head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        head = dummy;
         
-        ListNode preTarget = oldHead;
-        //make head n nodes ahead of pre
-        for (int i = 0; i < n; i++) {
-            if (head == null) {
-                return null;
-            }
+        // 加入dummy节点的意义在于每一个元素节点都成为了valid 的‘下一个节点’，dummy.next也起到了表头的作用
+        // 这样只需考虑对于指定位置的下一个节点怎么操作就可以了， 就算是原来的head是null也没事，因为并不会用.在其上
+        
+        ListNode preTarget = dummy;
+        for (int i = 0; i < n; i++){
             head = head.next;
         }
-        //when head is at end of list, preTarget is at n+1 from end of list
-        while (head != null) {
-            head = head.next;
+        
+        while (head.next != null) {
             preTarget = preTarget.next;
+            head = head.next;
         }
-        //delete the target
+        
         preTarget.next = preTarget.next.next;
-        return oldHead.next;
-    }
+        return dummy.next;
+    }    
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub

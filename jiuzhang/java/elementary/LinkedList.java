@@ -58,13 +58,17 @@ public class LinkedList {
 
     public static void main(String[] arg) {
         LinkedList aList = new LinkedList();
+        LinkedList aList2 = new LinkedList();
         
-        aList.addBefore(0, 10);
-        aList.addBefore(0, 20);
-        aList.addBefore(0, 30);
-        aList.addBefore(0, 40);
+        aList.addBefore(0, 15);
+        aList.addBefore(0, 11);
+        aList.addBefore(0, 8);
+        aList.addBefore(0, 3);
+        aList.addBefore(0, 1);
+        aList2.addBefore(0, 2);
         aList.print();
-        System.out.println(aList.get(0));
+        aList2.print();
+        System.out.println(aList.dummyNode.next.val);
     }
 
 }
