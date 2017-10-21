@@ -1,12 +1,5 @@
 package jiuzhang.java.elementary;
 
-class ListNode {
-    int val;
-    public ListNode next;
-    public ListNode(int x)
-    { val = x; }
-}
-
 public class LinkedList {
     public ListNode dummyNode;
     
