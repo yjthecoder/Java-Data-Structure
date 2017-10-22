@@ -11,7 +11,7 @@ public class ArrayListManager {
      */
     public static ArrayList<Integer> create(int n) {
         // Write your code here
-        ArrayList<Integer>  arrayList= new ArrayList<Integer>(n);
+        ArrayList<Integer>  arrayList= new ArrayList<Integer>(n);  //*Note: capacity is not size
 //        for (int i = 0; i < n; i++) {
 //            arrayList.add(i);
 //        }

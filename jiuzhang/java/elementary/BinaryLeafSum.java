@@ -4,7 +4,7 @@ public class BinaryLeafSum {
     
     // fist approach
     private int sum = 0;
-    public int leafSum(TreeNode root) {
+    public int leafSum1(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -13,13 +13,13 @@ public class BinaryLeafSum {
             return sum;
         }
         
-        leafSum(root.left);  //the upper level does not do anything, just let lower level accumulate and return the r
-        leafSum(root.right); //  result
+        leafSum1(root.left);  //the upper level does not do anything, just let lower level accumulate and return the r
+        leafSum1(root.right); //  result
         return sum;
     }
     
     // second approach，standard recursion
-    public int leafSum(TreeNode root) {
+    public int leafSum2(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -27,7 +27,7 @@ public class BinaryLeafSum {
             return root.val;
         }
         
-        return leafSum(root.left) + leafSum(root.right);
+        return leafSum2(root.left) + leafSum2(root.right);
     }
     
 
