@@ -2,8 +2,6 @@ package stormPath;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 public class StormTest {
@@ -45,6 +43,11 @@ public class StormTest {
 	public void testGetCitiesOneStormNoCity() {
 		Storm s = new Storm("Danielle", 2016);
 		assertTrue(s.getCities().size() == 0);
+	}
+
+	private void assertTrue(boolean b) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Test
