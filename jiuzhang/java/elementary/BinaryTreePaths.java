@@ -1,5 +1,5 @@
 package jiuzhang.java.elementary;
-
+//Binary Tree Paths
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,15 +24,21 @@ public class BinaryTreePaths {
         	result.set(i, "" + root.val + "->" + result.get(i)); 
         }
         
-        for (String path: result) {
-        	StringBuilder sb = new StringBuilder(path);
-        	sb.insert(0, "->");
-        	sb.insert(0, root.val);
-            path = sb.toString();
-            System.out.println(path);
-        }
         
-        System.out.println("result: " + result);
+        
+        // cannot use this b/c path is a new ref to a new string(after operation), the original string is not changed
+        // this is the immutable property of string in java
+        // must use the object's own method to change itself
+//        
+//        for (String path: result) {
+//        	StringBuilder sb = new StringBuilder(path);
+//        	sb.insert(0, "->");
+//        	sb.insert(0, root.val);
+//            path = sb.toString();
+//            System.out.println(path);
+//        }
+//        
+//        System.out.println("result: " + result);
         
         return result;
         
