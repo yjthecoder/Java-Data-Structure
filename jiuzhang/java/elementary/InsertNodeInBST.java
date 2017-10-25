@@ -65,4 +65,40 @@ public class InsertNodeInBST {
                      // this can be viewed as the top level method call, its easier to see
         
     }
+    
+    public TreeNode insertNode3(TreeNode root, TreeNode node) {
+        if (node == null) {
+            return root;
+        }
+        
+        if (root == null) {
+            return node;
+        }
+        
+        TreeNode temp = root;
+        TreeNode tempParent = root;
+        boolean onLeft = true;
+        
+        while (temp!= null) {
+            if (node.val < root.val) {
+                onLeft = true;
+                tempParent = temp;
+                temp = temp.left;
+            } else {
+                onLeft = false;
+                tempParent = temp;
+                temp = temp.right;
+            }
+        }
+        
+        if (onLeft) {
+            tempParent.left = node;
+        } else {
+            tempParent.right = node;
+        }
+        
+        return root;
+    }
+    
+    
 }
